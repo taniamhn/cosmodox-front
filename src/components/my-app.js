@@ -179,6 +179,7 @@ class MyApp extends LitElement {
       <!-- This gets hidden on a small screen-->
       <nav class="toolbar-list">
         <a ?selected="${_page === 'home'}" href="/home">Home</a>
+        <a ?selected="${_page === 'profile'}" href="/profile">Perfil</a>
         <a ?selected="${_page === 'view1'}" href="/view1">View One</a>
         <a ?selected="${_page === 'view2'}" href="/view2">View Two</a>
         <a ?selected="${_page === 'view3'}" href="/view3">View Three</a>
@@ -190,6 +191,7 @@ class MyApp extends LitElement {
         @opened-changed="${e => this._updateDrawerState(e.target.opened)}">
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/home">Home</a>
+        <a ?selected="${_page === 'profile'}" href="/profile">Perfil</a>
         <a ?selected="${_page === 'view1'}" href="/view1">View One</a>
         <a ?selected="${_page === 'view2'}" href="/view2">View Two</a>
         <a ?selected="${_page === 'view3'}" href="/view3">View Three</a>
@@ -200,6 +202,7 @@ class MyApp extends LitElement {
     <main role="main" class="main-content">
       <cosmodox-home class="page" ?active="${_page === 'home'}"></cosmodox-home>
       <cosmodox-register class="page" ?active="${_page === 'register'}"></cosmodox-register>
+      <cosmodox-profile class="page" ?active="${_page === 'profile'}"></cosmodox-profile>
       <my-view1 class="page" ?active="${_page === 'view1'}"></my-view1>
       <my-view2 class="page" ?active="${_page === 'view2'}"></my-view2>
       <my-view3 class="page" ?active="${_page === 'view3'}"></my-view3>
@@ -294,6 +297,8 @@ class MyApp extends LitElement {
         break;
       case 'register':
         import('../components/cosmodox-register.js');
+      case 'profile':
+        import('../components/cosmodox-profile.js');
         break;
       case 'view1':
         import('../components/my-view1.js').then((module) => {
